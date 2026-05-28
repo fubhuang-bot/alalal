@@ -1,0 +1,19 @@
+base-url: "https://notify.example.com"
+cache-file: "/var/cache/ntfy/cache.db"
+behind-proxy: true
+
+# 如果你需要网页登录或用户管理，可进一步启用认证。
+# auth-file: "/var/cache/ntfy/auth.db"
+# auth-default-access: "deny-all"
+
+# Web Push 对网页/PWA 通知很有帮助。
+# 生成方式可参考官方文档中的 `ntfy webpush keys`。
+# web-push-public-key: "REPLACE_WITH_PUBLIC_KEY"
+# web-push-private-key: "REPLACE_WITH_PRIVATE_KEY"
+# web-push-file: "/var/cache/ntfy/webpush.db"
+# web-push-email-address: "you@example.com"
+
+# iOS 即时通知在自建场景下需要按官方文档配置 upstream。
+# upstream-base-url: "https://ntfy.sh"
+
+attachment-cache-dir: "/var/cache/ntfy/attachments"

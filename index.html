@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Family Location Alert</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="shell">
+      <section class="hero">
+        <p class="eyebrow">YIER-BUBU-ALERT</p>
+        <h1>SEND YOUR MESSAGE</h1>
+        <p class="intro">
+      
+        </p>
+      </section>
+
+      <section class="card">
+        <h2>发送设置</h2>
+        <form id="alert-form" class="stack">
+          <label>
+            <span>通知服务器</span>
+            <input id="server-url" type="url" value="https://ntfy.sh" required />
+          </label>
+
+          <label>
+            <span>通知主题</span>
+            <input
+              id="topic"
+              type="text"
+              value="replace-with-private-topic"
+              required
+              pattern="[A-Za-z0-9_-]+"
+            />
+          </label>
+
+          <label>
+            <span>通知标题</span>
+            <input id="title" type="text" value="家人位置提醒" maxlength="80" />
+          </label>
+
+          <label>
+            <span>发给谁</span>
+            <input id="recipient" type="text" value="用户B" maxlength="80" />
+          </label>
+
+          <label>
+            <span>预设短讯</span>
+            <select id="preset-message">
+              <option value="我现在在这里，请联系我。">我现在在这里，请联系我。</option>
+              <option value="我已到达目的地。">我已到达目的地。</option>
+              <option value="我需要你来接我。">我需要你来接我。</option>
+              <option value="请留意我的位置更新。">请留意我的位置更新。</option>
+            </select>
+          </label>
+
+          <label>
+            <span>自定义补充内容</span>
+            <textarea
+              id="note"
+              rows="3"
+              placeholder="可选，例如：爱你。"
+            ></textarea>
+          </label>
+
+          <div class="actions">
+            <button type="submit" id="send-button">发送我的当前位置</button>
+            <button type="button" id="preview-button" class="ghost">生成消息预览</button>
+          </div>
+        </form>
+      </section>
+
+      <section class="card">
+        <h2>消息预览</h2>
+        <pre id="preview-box" class="preview">还没有生成内容。</pre>
+      </section>
+
+      <section class="card status-card">
+        <h2>状态</h2>
+        <p id="status-text">等待操作。</p>
+        <ul class="notes">
+          <li>浏览器读取定位时，需要允许定位权限。</li>
+          <li>手机浏览器通常要求网页通过 HTTPS 打开。</li>
+        </ul>
+      </section>
+    </main>
+
+    <script src="./app.js"></script>
+  </body>
+</html>

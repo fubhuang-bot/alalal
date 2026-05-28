@@ -1,0 +1,12 @@
+services:
+  ntfy:
+    image: binwiederhier/ntfy
+    container_name: family-location-ntfy
+    command:
+      - serve
+    ports:
+      - "8085:80"
+    volumes:
+      - ./cache:/var/cache/ntfy
+      - ./config:/etc/ntfy
+    restart: unless-stopped
